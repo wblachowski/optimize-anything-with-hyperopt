@@ -1,0 +1,3 @@
+While retaining the basic construction and design of the Weston
+Master II meter, the Master III has a redesigned and larger exposure
+calculator. Its new features aim at allowing clearer setting and reading
