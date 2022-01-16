@@ -17,7 +17,7 @@ def cummulative_dissimilarity(params, directory="data", display=False):
     texts_dir = Path(directory) / "texts"
     for image in glob(str(images_dir / "*.jpg")):
         text = texts_dir / (Path(image).stem + ".txt")
-        total_loss = dissimilarity(image, text, params, display=display)
+        total_loss += dissimilarity(image, text, params, display=display)
 
     return {"loss": total_loss, "status": STATUS_OK, "params": params}
 
