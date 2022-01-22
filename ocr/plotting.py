@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
+from sklearn.linear_model import LinearRegression
 
 
 def display_ocr_result(text, img, similarity):
@@ -42,3 +43,16 @@ def _get_optimal_font_size(text, num_lines, font, width, height, encoding):
         if text_size[0] <= width and text_size[1] * num_lines <= height:
             return size
     return 1
+
+
+def plot_losses_history(results, y_lim=None):
+    losses = np.array([trial["loss"] for trial in results]).reshape(-1, 1)
+    x = np.array(range(len(losses))).reshape(-1, 1)
+    reg = LinearRegression().fit(x, losses)
+    plt.title("Losses history")
+    plt.ylabel("Loss")
+    plt.xlabel("Iteration")
+    plt.plot(losses)
+    plt.ylim(y_lim)
+    plt.plot(reg.predict(x), color="red")
+    plt.show()
