@@ -7,7 +7,7 @@ from sklearn.linear_model import LinearRegression
 def display_ocr_result(text, img, similarity):
     plt.figure(figsize=(15, 10))
     plt.subplot(1, 2, 1)
-    plt.title("Preprocessed image")
+    plt.title("Preprocessed image", fontsize=18)
     plt.imshow(img, cmap="gray")
     plt.xticks([]), plt.yticks([])
     plt.subplot(1, 2, 2)
@@ -29,7 +29,7 @@ def display_ocr_result(text, img, similarity):
     font_text = ImageFont.truetype(font="arial.ttf", size=font_size, encoding="utf-8")
     draw.text((gap, gap), text, 0, font=font_text)
     text_img = np.asarray(pil_image)
-    plt.title(f"OCR result (similarity: {similarity:.4f})")
+    plt.title(f"OCR result (similarity: {similarity:.4f})", fontsize=18)
     plt.imshow(text_img, cmap="gray")
     plt.xticks([]), plt.yticks([])
     plt.tight_layout()
