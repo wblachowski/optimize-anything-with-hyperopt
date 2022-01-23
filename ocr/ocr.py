@@ -33,7 +33,7 @@ def dissimilarity(img_path, text_path, params, display=False):
 
 
 def _ocr(img_path, params):
-    # Reading the image + converting to gray:
+    # Reading the image + converting to grayscale:
     img = cv2.imread(img_path)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
