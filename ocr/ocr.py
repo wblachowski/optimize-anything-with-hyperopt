@@ -11,7 +11,7 @@ from plotting import display_ocr_result
 from preprocessing import binarize, denoise, erode_and_dilate, resize
 
 
-def cummulative_dissimilarity(params, directory="data", display=False):
+def cumulative_dissimilarity(params, directory="data", display=False):
     total_loss = 0
     images_dir = Path(directory) / "images"
     texts_dir = Path(directory) / "texts"
